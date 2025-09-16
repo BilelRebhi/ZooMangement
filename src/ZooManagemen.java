@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class ZooManagemen {
+public class
+ZooManagemen {
     public static void main(String[] args)
     {
 
