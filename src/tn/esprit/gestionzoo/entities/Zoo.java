@@ -1,10 +1,51 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Zoo {
-    Animal[] animals;
-    String name;
-    String city;
-    final int nbrCages = 25;
-    int nbrAnimal = 0;
-    static int totalAnimals = 0;
+    protected Animal[] animals;
+    protected String name;
+
+    public static int getTotalAnimals() {
+        return totalAnimals;
+    }
+
+    public static void setTotalAnimals(int totalAnimals) {
+        Zoo.totalAnimals = totalAnimals;
+    }
+
+    public int getNbrAnimal() {
+        return nbrAnimal;
+    }
+
+    public void setNbrAnimal(int nbrAnimal) {
+        this.nbrAnimal = nbrAnimal;
+    }
+
+    public int getNbrCages() {
+        return nbrCages;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if(this.name !="")
+        {this.name = name;
+        }
+    }
+
+    protected String city;
+    protected final int nbrCages = 25;
+    protected int nbrAnimal = 0;
+    protected static int totalAnimals = 0;
 
     public Zoo(String name, String city) {
         this.name = name;
@@ -13,12 +54,12 @@ public class Zoo {
     }
 
     public void displayZoo() {
-        System.out.println("Zoo: " + name + " | Ville: " + city + " | Nombre de cages: " + nbrCages);
+        System.out.println("tn.esprit.gestionzoo.entities.Zoo: " + name + " | Ville: " + city + " | Nombre de cages: " + nbrCages);
     }
 
     @Override
     public String toString() {
-        return "Zoo{name='" + name + "', city='" + city + "', nbrCages=" + nbrCages
+        return "tn.esprit.gestionzoo.entities.Zoo{name='" + name + "', city='" + city + "', nbrCages=" + nbrCages
                 + ", animaux dans ce zoo: " + nbrAnimal + ", total animaux: " + totalAnimals + "}";
     }
 
@@ -52,7 +93,7 @@ public class Zoo {
 
     public int searchAnimal(Animal animal) {
         for (int i = 0; i < nbrAnimal; i++) {
-            if (animals[i] != null && animals[i].name.equals(animal.name)) {
+            if (animals[i] != null && animals[i].getName().equals(animal.getName())) {
                 return i;
             }
         }
