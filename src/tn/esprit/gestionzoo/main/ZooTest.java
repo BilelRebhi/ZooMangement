@@ -2,18 +2,19 @@ package tn.esprit.gestionzoo.main;
 import tn.esprit.gestionzoo.entities.*;
 public class ZooTest {
     public static void main(String[] args) {
-        Aquatic aquatic = new Aquatic("Fish", "Ocean");
-        Terrestrial terrestrial = new Terrestrial("Lion", 4);
-        Dolphin dolphin = new Dolphin("Dolphin", "Sea", 25.5f);
-        Penguin penguin = new Penguin("Penguin", "Antarctica", 50.0f);
+        Aquatic fish = new Aquatic("Fish");
+        Penguin penguin = new Penguin("Penguin");
+        Terrestrial bear = new Terrestrial("Bear");
 
-        System.out.println(aquatic);
-        System.out.println(terrestrial);
-        System.out.println(dolphin);
-        System.out.println(penguin);
+        System.out.println("\n--- Aquatic ---");
+        fish.eatMeat(Food.MEAT);
 
-        aquatic.swim();
-        dolphin.swim();
-        penguin.swim();
+        System.out.println("\n--- Penguin ---");
+        penguin.eatMeat(Food.MEAT);
+
+        System.out.println("\n--- Terrestrial ---");
+        bear.eatMeat(Food.MEAT);
+        bear.eatPlant(Food.PLANT);
+        bear.eatPlantAndMeet(Food.BOTH);
     }
 }

@@ -1,13 +1,18 @@
 package tn.esprit.gestionzoo.entities;
-
-public class Aquatic extends Animal {
+import tn.esprit.gestionzoo.entities.Carnivore;
+public class Aquatic  implements Carnivore<Food> {
     private String habitat;
 
     public Aquatic() {}
 
-    public Aquatic(String name, String habitat) {
-        super(name);
-        this.habitat = habitat;
+    public String getName() {
+        return name;
+    }
+
+    private String name;
+
+    public Aquatic(String name) {
+        this.name = name;
     }
 
     public String getHabitat() {
@@ -25,5 +30,13 @@ public class Aquatic extends Animal {
     @Override
     public String toString() {
         return "Aquatic{name='" + getName() + "', habitat='" + habitat + "'}";
+    }
+    @Override
+    public void eatMeat(Food meat) {
+        if (meat == Food.MEAT || meat == Food.BOTH) {
+            System.out.println(name + " eats meat from the water!");
+        } else {
+            System.out.println(name + " cannot eat plants!");
+        }
     }
 }

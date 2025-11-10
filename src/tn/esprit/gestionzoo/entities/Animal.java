@@ -1,4 +1,4 @@
-package tn.esprit.gestionzoo.entities;
+/*package tn.esprit.gestionzoo.entities;
 
 
 public class Animal {
@@ -18,3 +18,4 @@ public class Animal {
         this.name = name;
     }
 }
+*/
